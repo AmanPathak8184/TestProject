@@ -1,0 +1,23 @@
+  server:
+    servlet:
+      port: 8080
+      context-path: /api
+
+  spring:
+
+    application:
+      name: TestProject
+
+    datasource:
+      url: jdbc:postgresql://testinstance.cvvyijfgo0gu.ap-southeast-1.rds.amazonaws.com:5432/testdb
+      username: testadmin
+      password: Nirmal8486!
+      driver-class-name: org.postgresql.Driver
+
+    jpa:
+      properties:
+        hibernate:
+          temp:
+            use_jdbc_metadata_defaults: false
+          database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+
