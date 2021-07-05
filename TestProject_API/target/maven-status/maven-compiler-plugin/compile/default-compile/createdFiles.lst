@@ -1,0 +1,4 @@
+Models/SignupUserRequest.class
+Models/SignupUserResponse.class
+Controllers/SignupController.class
+Models/UserStatusType.class

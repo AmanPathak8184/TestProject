@@ -32,8 +32,9 @@
    </dependencies>
 
     <modules>
-        <module>TestProject_API</module>
         <module>TestProject_DB</module>
+        <module>TestProject_Service</module>
+        <module>TestProject_API</module>
     </modules>
 
     <properties>
