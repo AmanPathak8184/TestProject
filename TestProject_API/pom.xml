@@ -11,6 +11,13 @@
 
     <dependencies>
 
+        <!-- New Project Service Layer -->
+        <dependency>
+            <groupId>gamfo</groupId>
+            <artifactId>TestProject_Service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <!-- PostgreSQL Driver -->
         <dependency>
             <groupId>org.postgresql</groupId>

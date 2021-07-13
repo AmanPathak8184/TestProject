@@ -1,1 +1,5 @@
+/Users/darkmatter/Desktop/TestProject/TestProject_Service/src/main/java/Entities/UserEntity.java
+/Users/darkmatter/Desktop/TestProject/TestProject_Service/src/main/java/DAO/UserDao.java
 /Users/darkmatter/Desktop/TestProject/TestProject_Service/src/main/java/Entities/RoleEntity.java
+/Users/darkmatter/Desktop/TestProject/TestProject_Service/src/main/java/Entities/UserAuthTokenEntity.java
+/Users/darkmatter/Desktop/TestProject/TestProject_Service/src/main/java/Business/SignupBusinessService.java

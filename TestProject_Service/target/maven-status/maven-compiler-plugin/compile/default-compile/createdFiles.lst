@@ -1,1 +1,5 @@
 Entities/RoleEntity.class
+Business/SignupBusinessService.class
+Entities/UserEntity.class
+DAO/UserDao.class
+Entities/UserAuthTokenEntity.class

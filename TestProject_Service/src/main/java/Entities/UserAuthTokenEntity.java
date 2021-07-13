@@ -12,9 +12,8 @@ import java.io.Serializable;
 import java.time.ZonedDateTime;
 
 @Entity
-@Table (name = "roles" , schema = "TestProject")
-
-public class RoleEntity implements Serializable {
+@Table(name = "user_auth_token" , schema = "TestProject")
+public class UserAuthTokenEntity implements Serializable {
 
     /* ID Column */
     @Id
@@ -22,31 +21,35 @@ public class RoleEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    /* UUID Column */
-    @Column(name = "UUID")
-    @NotNull
-    private int uuid;
-
     /* Version Column */
     @Version
-    @Column(name = "VERSION" , length = 19, nullable = false)
+    @Column(name = "VERSION", length = 19, nullable = false)
     private Long version;
 
-    /* Name Column */
-    @Column(name = "NAME")
-    @NotNull
-    @Size(max = 50)
-    private String name;
+    /* User ID Column */
+    @ManyToOne
+    @JoinColumn(name = "USER_ID")
+    private UserEntity user;
 
-    /* Description Column */
-    @Column(name = "DESCRIPTION")
-    @Size(max = 200)
-    private String description;
-
-    /* Active Column */
-    @Column(name = "ACTIVE")
+    /* Access Token Column */
+    @Column(name = "ACCESS_TOKEN")
     @NotNull
-    private boolean active;
+    @Size(max = 500)
+    private String accessToken;
+
+    /* Expires At Column */
+    @Column(name = "EXPIRES_AT")
+    @NotNull
+    private ZonedDateTime expiresAt;
+
+    /* Login At Column */
+    @Column(name = "LOGIN_AT")
+    @NotNull
+    private ZonedDateTime loginAt;
+
+    /* Logout Column */
+    @Column(name = "LOGOUT_AT")
+    private ZonedDateTime logoutAt;
 
     /* Created By Column */
     @Column(name = "CREATED_BY")
@@ -54,7 +57,7 @@ public class RoleEntity implements Serializable {
     @Size(max = 100)
     private String createdBy;
 
-    /* Created At column */
+    /* Created At Column */
     @Column(name = "CREATED_AT")
     @NotNull
     private ZonedDateTime createdAt;
@@ -68,7 +71,7 @@ public class RoleEntity implements Serializable {
     @Column(name = "MODIFIED_AT")
     private ZonedDateTime modifiedAt;
 
-    /* Setters & Getters Method */
+    /* Getters & Setters Methods */
 
     public int getId() {
         return id;
@@ -78,44 +81,52 @@ public class RoleEntity implements Serializable {
         this.id = id;
     }
 
-    public int getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(int uuid) {
-        this.uuid = uuid;
-    }
-
-    public long getVersion() {
+    public Long getVersion() {
         return version;
     }
 
-    public void setVersion(long version) {
+    public void setVersion(Long version) {
         this.version = version;
     }
 
-    public String getName() {
-        return name;
+    public UserEntity getUser() {
+        return user;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAccessToken() {
+        return accessToken;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 
-    public boolean isActive() {
-        return active;
+    public ZonedDateTime getExpiresAt() {
+        return expiresAt;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setExpiresAt(ZonedDateTime expiresAt) {
+        this.expiresAt = expiresAt;
+    }
+
+    public ZonedDateTime getLoginAt() {
+        return loginAt;
+    }
+
+    public void setLoginAt(ZonedDateTime loginAt) {
+        this.loginAt = loginAt;
+    }
+
+    public ZonedDateTime getLogoutAt() {
+        return logoutAt;
+    }
+
+    public void setLogoutAt(ZonedDateTime logoutAt) {
+        this.logoutAt = logoutAt;
     }
 
     public String getCreatedBy() {
